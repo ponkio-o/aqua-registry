@@ -565,6 +565,8 @@ packages:
     asset: "kubectl-tree_{{.Version}}_{{.OS}}_{{.Arch}}.tar.gz"
     description: kubectl plugin to browse Kubernetes object hierarchies as a tree
   - name: ahmetb/kubectx/kubens
+    aliases:
+      - name: ahmetb/kubens
     type: github_release
     repo_owner: ahmetb
     repo_name: kubectx
@@ -584,21 +586,6 @@ packages:
     repo_name: kubectx
     asset: "kubectx_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}"
     description: Faster way to switch between clusters and namespaces in kubectl
-    replacements:
-      386: i386
-      amd64: x86_64
-    format: tar.gz
-    format_overrides:
-      - goos: windows
-        format: zip
-  - name: ahmetb/kubens
-    type: github_release
-    repo_owner: ahmetb
-    repo_name: kubectx
-    asset: "kubens_{{.Version}}_{{.OS}}_{{.Arch}}.{{.Format}}"
-    description: DEPRECATED. PLEASE USE ahmetb/kubectx/kubens
-    files:
-      - name: kubens
     replacements:
       386: i386
       amd64: x86_64
@@ -4054,12 +4041,16 @@ packages:
       - name: shellspec
         src: "shellspec-{{.Version}}/shellspec"
   - type: github_release
+    aliases:
+      - name: talos-systems/conform
     repo_owner: siderolabs
     repo_name: conform
     asset: "conform-{{.OS}}-{{.Arch}}"
     description: Policy enforcement for your pipelines
     format: raw
   - type: github_release
+    aliases:
+      - name: talos-systems/talos
     repo_owner: siderolabs
     repo_name: talos
     asset: "talosctl-{{.OS}}-{{.Arch}}"
@@ -4332,22 +4323,6 @@ packages:
         src: kubectl-advise-psp
       - name: kube-psp-advisor
         src: kubectl-advise-psp
-  # [DEPRECATED] talos-systems was renamed to siderolabs
-  - type: github_release
-    repo_owner: talos-systems
-    repo_name: conform
-    asset: "conform-{{.OS}}-{{.Arch}}"
-    description: Policy enforcement for your pipelines
-    format: raw
-  # [DEPRECATED] talos-systems was renamed to siderolabs
-  - type: github_release
-    repo_owner: talos-systems
-    repo_name: talos
-    asset: "talosctl-{{.OS}}-{{.Arch}}"
-    description: Talos is a modern OS for Kubernetes. talosctl is a CLI for out-of-band management of Kubernetes nodes created by Talos
-    files:
-      - name: talosctl
-    format: raw
   - type: github_release
     repo_owner: tcnksm
     repo_name: ghr

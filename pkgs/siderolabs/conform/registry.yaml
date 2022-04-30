@@ -1,5 +1,7 @@
 packages:
   - type: github_release
+    aliases:
+      - name: talos-systems/conform
     repo_owner: siderolabs
     repo_name: conform
     asset: "conform-{{.OS}}-{{.Arch}}"
