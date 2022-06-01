@@ -730,13 +730,10 @@ packages:
         format_overrides:
           - goos: darwin
             format: zip
-  - type: go
+  - type: go_install
     repo_owner: anqiansong
     repo_name: github-compare
     description: A Command-line statistics tool to compare the GitHub repositories
-    files:
-      - name: github-compare
-        dir: "github-compare-{{trimV .Version}}"
   - type: github_release
     repo_owner: antonmedv
     repo_name: fx
@@ -2189,15 +2186,15 @@ packages:
     files:
       - name: mockgen
         src: "mock_{{trimV .Version}}_{{.OS}}_{{.Arch}}/mockgen"
-  - type: go
+  - type: go_install
     name: golang/tools/gopls
+    path: golang.org/x/tools/gopls
     repo_owner: golang
     repo_name: tools
     description: Go language server
     version_filter: 'Version startsWith "gopls/"'
     files:
       - name: gopls
-        dir: 'tools-gopls-{{trimPrefix "gopls/" .Version}}/gopls'
   - type: github_release
     repo_owner: golangci
     repo_name: golangci-lint
@@ -2261,14 +2258,11 @@ packages:
       windows: Windows
       386: i386
       amd64: x86_64
-  - type: go
+  - type: go_install
     repo_owner: google
     repo_name: wire
+    path: github.com/google/wire/cmd/wire
     description: Compile-time Dependency Injection for Go
-    files:
-      - name: wire
-        src: ./cmd/wire
-        dir: "wire-{{trimV .Version}}"
   - type: github_release
     repo_owner: gopasspw
     repo_name: gopass
@@ -2979,13 +2973,10 @@ packages:
       darwin: MacOS
       linux: Linux
       windows: Windows
-  - type: go
+  - type: go_install
     repo_owner: katbyte
     repo_name: terrafmt
     description: Format terraform blocks embedded in files
-    files:
-      - name: terrafmt
-        dir: "terrafmt-{{trimV .Version}}"
   - type: github_release
     repo_owner: kayac
     repo_name: ecspresso
@@ -3436,14 +3427,11 @@ packages:
     files:
       - name: minishift
         src: "minishift-{{trimV .Version}}-{{.OS}}-{{.Arch}}/minishift"
-  - type: go
+  - type: go_install
     repo_owner: mitchellh
     repo_name: gox
     description: A dead simple, no frills Go cross compile tool
     version_source: github_tag
-    files:
-      - name: gox
-        dir: "gox-{{trimV .Version}}"
   - type: github_release
     repo_owner: mkchoi212
     repo_name: fac
