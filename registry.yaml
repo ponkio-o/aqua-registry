@@ -3394,7 +3394,7 @@ packages:
     repo_owner: cloudfoundry
     repo_name: cli
     description: The official command line client for Cloud Foundry
-    url: https://packages.cloudfoundry.org/stable?release={{.OS}}{{.Arch}}-binary&version={{.trimV .Version}}
+    url: https://packages.cloudfoundry.org/stable?release={{.OS}}{{.Arch}}-binary&version={{trimV .Version}}
     supported_envs:
       - darwin
       - amd64
@@ -3404,9 +3404,9 @@ packages:
       amd64: x64
     overrides:
       - goos: linux
-        url: https://packages.cloudfoundry.org/stable?release={{.OS}}64-binary&version={{.trimV .Version}}
+        url: https://packages.cloudfoundry.org/stable?release={{.OS}}64-binary&version={{trimV .Version}}
       - goos: windows
-        url: https://packages.cloudfoundry.org/stable?release={{.OS}}64-exe&version={{.trimV .Version}}
+        url: https://packages.cloudfoundry.org/stable?release={{.OS}}64-exe&version={{trimV .Version}}
     files:
       - name: cf
   - type: github_release
