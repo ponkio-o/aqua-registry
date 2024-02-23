@@ -1,0 +1,91 @@
+packages:
+  - type: github_release
+    repo_owner: francoismichel
+    repo_name: ssh3
+    description: "SSH3: faster and rich secure shell using HTTP/3, checkout our article here: https://arxiv.org/abs/2312.08396"
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 0.1.0")
+        asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_{{.OS}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: darwin
+            asset: ssh3_{{trimV .Version}}_macos_{{.OS}}_{{.Arch}}.{{.Format}}
+        supported_envs:
+          - linux/amd64
+          - darwin
+      - version_constraint: Version == "v0.1.1"
+        asset: ssh3_{{trimV .Version}}_clientonly_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_clientonly_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: amd64
+            asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+      - version_constraint: semver("<= 0.1.3")
+        asset: ssh3_{{trimV .Version}}_clientonly_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_clientonly_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: amd64
+            asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+          - goos: windows
+            format: zip
+      - version_constraint: Version == "v0.1.4-bsd"
+        asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            asset: ssh3_{{trimV .Version}}_clientonly_{{.OS}}_{{.Arch}}.{{.Format}}
+      - version_constraint: Version == "v0.1.4"
+        asset: ssh3_{{trimV .Version}}_clientonly_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_clientonly_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: linux
+            goarch: amd64
+            asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+          - goos: windows
+            format: zip
+      - version_constraint: "true"
+        asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}.{{.Format}}
+        format: tar.gz
+        replacements:
+          amd64: x86_64
+        checksum:
+          type: github_release
+          asset: ssh3_{{trimV .Version}}_{{.OS}}_{{.Arch}}_checksums.txt
+          algorithm: sha256
+        overrides:
+          - goos: windows
+            format: zip
+            asset: ssh3_{{trimV .Version}}_clientonly_{{.OS}}_{{.Arch}}.{{.Format}}
