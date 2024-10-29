@@ -18,6 +18,8 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        files:
+          - name: git
       - version_constraint: "true"
         asset: git-shim-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
         format: tar.gz
@@ -29,3 +31,5 @@ packages:
         overrides:
           - goos: windows
             format: zip
+        files:
+          - name: git-shim
