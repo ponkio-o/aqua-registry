@@ -1,0 +1,4 @@
+packages:
+  - name: dependabot/git-shim@v1.5.0
+  - name: dependabot/git-shim
+    version: v1.4.0
