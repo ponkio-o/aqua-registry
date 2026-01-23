@@ -28779,6 +28779,40 @@ packages:
         files:
           - name: dependabot
   - type: github_release
+    repo_owner: dependabot
+    repo_name: git-shim
+    description: git https shim
+    version_constraint: "false"
+    version_overrides:
+      - version_constraint: semver("<= 1.0.0")
+        no_asset: true
+      - version_constraint: semver("<= 1.4.0")
+        asset: git-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.md5"
+          algorithm: md5
+        overrides:
+          - goos: windows
+            format: zip
+        files:
+          - name: git
+      - version_constraint: "true"
+        asset: git-shim-{{.Version}}-{{.OS}}-{{.Arch}}.{{.Format}}
+        format: tar.gz
+        windows_arm_emulation: true
+        checksum:
+          type: github_release
+          asset: "{{.Asset}}.md5"
+          algorithm: md5
+        overrides:
+          - goos: windows
+            format: zip
+        files:
+          - name: git-shim
+  - type: github_release
     repo_owner: derailed
     repo_name: k9s
     description: Kubernetes CLI To Manage Your Clusters In Style
